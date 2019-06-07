@@ -10,14 +10,30 @@ import in.ac.sharda.pizzaapplication.domain.Product;
 
 @RestController
 
-public class ProductListController {
+public class CartController {
 	
-	@GetMapping("/product/list")
+	private int count;
+
+	@GetMapping("/cart")
 	public List<Product> products(){
 		List<Product> products = new ArrayList<>();
-		for(int i = 1; i<20; i++) {
+		for(int i = 100; i<=120; i++) {
 			products.add(new Product(i, i*10, "Nme "+i, "Desc "+i));
 		}
 		return products;
+	}
+	
+	public void product(){
+		List<Product> products = new ArrayList<>();
+		for(int i = 1; i<20; i++) {
+			products.remove(new Product(i, i*10, "Nme "+i, "Desc "+i));
+		}
+		System.out.println("All item removed");
+	}
+	
+	public void productss(){
+		List<Product> products = new ArrayList<>();
+		count = products.size();
+		System.out.println(count);
 	}
 }

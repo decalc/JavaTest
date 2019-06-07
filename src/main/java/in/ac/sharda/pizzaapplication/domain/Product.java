@@ -2,6 +2,19 @@ package in.ac.sharda.pizzaapplication.domain;
 
 public class Product {
 	
+	private int calories;
+	public int getCalories() {
+		return calories;
+	}
+
+
+	public void setCalories(int calories) {
+		this.calories = calories;
+	}
+	public Product(int id) {
+		this.id = id;
+	}
+
 	private final int id;
 	public int getId() {
 		return id;
@@ -33,6 +46,7 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	private int price;
 	private String name,description;
 	
@@ -43,5 +57,6 @@ public class Product {
 		
 		return false;
 	}
+	
 
 }
